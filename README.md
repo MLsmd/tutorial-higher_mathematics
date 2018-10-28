@@ -1,4 +1,4 @@
-# Tutoral - Higher Mathematics
+# Tutorial - Higher Mathematics
 Language: german
 
 Summary sheets for the lecture series of higher mathematics.

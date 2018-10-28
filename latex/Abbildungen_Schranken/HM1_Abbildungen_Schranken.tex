@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contract
+% LaTeX Template
+% Version 1.0 (December 8 2014)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Brandon Fryslie
+% With extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Note:
+% If you are using Apple OS X, go into structure.tex and uncomment the font
+% specifications for OS X and comment out the default specifications - this will
+% drastically increase how good the document looks. You will now need to
+% compile with XeLaTeX.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 2}
+\fancyhead[R]{01.11.2018}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+\section{Abbildungen}
+
+Eine Abbildung $ f: x \rightarrow y $ bildet vom \textbf{Definitionsbereich x} in den \textbf{Wertebereich y} ab. Im Gegensatz zum Wertebereich ist der \textbf{Bildbereich} das Intervall, das tatsächlich von der Abbildung abgebildet wird.
+
+\subsection{Eigenschaften}
+
+\begin{itemize}
+\item \textbf{Injektivität}: Jedes Element des Definitionsbereichs wird eindeutig auf ein Element des Wertebereichs abgebildet. $\rightarrow$ Zu zeigen ist: $f(x) = f(y) \Leftrightarrow x = y$
+\item \textbf{Surjektivität}: Jedes Element des Wertebereichs wird von mindestens einem Element des Definitionsbereichs getroffen. [Durch Verkleinern des Wertebereichs kann jede Abbildung surjektiv werden.] $\rightarrow$ Untersuche Grenzwerte und kritische Punkte des Wertebereichs.
+\item \textbf{Bijektivität}: Die Abbildung ist injektiv und surjektiv; also wird jedes Element des Wertebereichs genau einmal abgebildet und der komplette Definitionsbereich muss abgebildet werden.
+\end{itemize}
+
+\section{Schranken und Extremwerte von Intervallen}
+\begin{itemize}
+\item \textbf{Schranke:} Die Schranke ist größer gleich [kleiner gleich] dem größten [kleinsten] Element des Intervalls. (Es gibt viele obere [untere] Schranken)
+\item \textbf{Supremum:} Kleinste obere Schranke a. (z.B. bei den Intervallen I=(a,b) und auch bei I=[a,b])
+\item \textbf{Infimum:} Größte untere Schranke.
+\item \textbf{Minimum:} $min(A)=inf(A) \Leftrightarrow inf(A) \in A $. Existiert nur bei geschlossener Intervallgrenze '[' \\
+(Wenn $inf(A) \notin A $ existiert kein Minimum)
+\item \textbf{Maximum:} $max(A)=sup(A) \Leftrightarrow sup(A) \in A $. Existiert nur bei geschlossener Intervallgrenze ']' \\
+(Wenn $sup(A) \notin A $ existiert kein Maximum)
+\end{itemize}
+\textbf{Achtung:} Ein offenes Intervall I=(a,b) hat \textbf{kein} Maximum/Minimum, sondern lediglich das Supremum a und das Infimum b.
+
+
+\end{document}

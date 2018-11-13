@@ -1,0 +1,98 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contract
+% LaTeX Template
+% Version 1.0 (December 8 2014)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Brandon Fryslie
+% With extensive modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Note:
+% If you are using Apple OS X, go into structure.tex and uncomment the font
+% specifications for OS X and comment out the default specifications - this will
+% drastically increase how good the document looks. You will now need to
+% compile with XeLaTeX.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 4}
+\fancyhead[R]{13.11.2018}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+\usepackage{amssymb}
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+
+
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVE SECTION
+%----------------------------------------------------------------------------------------
+
+
+\section{Komplexe Zahlen}
+\subsection{Definitionen}
+Eine komplexe Zahl $z=x+iy$ besteht aus dem Realteil x und dem Imaginärteil y.\\
+(x und y sind beides reelle Zahlen; y wird noch mit i multipliziert). Es gilt:
+\begin{center}
+\framebox[50pt]{$i^2 = -1$} 
+\end{center}
+Außerdem kann eine komplexe Zahl immer in \textbf{Polarkoordinaten} dargestellt werden:
+\begin{center}
+$z = x+iy = r(cos\phi + i Sin \phi) = $ \framebox[50pt]{$r e^{i \phi}$} mit $r = |z|$
+\end{center}
+Die Phase errechnet sich aus $\phi = arctan(\frac{b}{a})$ mit der Fallunterscheidung:
+\begin{itemize}
+\item \textbf{a > 0:} $\phi \in \{-\frac{\pi}{2},\frac{\pi}{2}\}$
+\item \textbf{a = 0 und b > 0:} $\phi = \frac{\pi}{2}$
+\item \textbf{a = 0 und b < 0:} $\phi = \frac{-\pi}{2}$
+\item \textbf{a < 0 und b $\geq$ 0:} $\phi = arctan(\frac{b}{a}+\pi)$
+\item \textbf{a < 0 und b < 0:} $\phi = arctan(\frac{b}{a}-\pi)$
+
+\end{itemize}
+\subsection{Rechenregeln}
+\begin{itemize}
+\item \textbf{Addition:} Realteile addieren; Imaginäreteile addieren
+\item \textbf{Konjugation:} $\overline{z}:=x-iy$ (i mit -i ersetzen oder Imaginärteil negieren)
+\item \textbf{Betrag:} $|z| := \sqrt{z \, \overline{z}} = \sqrt{x^2+y^2}$
+\item \textbf{komplexe Wurzel:} Lösungen von $z^n = r e^{i\phi} $ sind $z_{j} = r^\frac{1}{n} e^{i (\frac{2 \pi j+ \phi}{n})}, \quad j \in \mathbb{Z} $
+\end{itemize}
+\subsection{Tricks}
+\begin{itemize}
+\item komplex konjugiert Erweitern
+\item $\frac{1}{i} = -i$
+\item komplexe Ebene skizzieren um das Problem zu visualisieren
+\end{itemize}
+\subsection{Weitere Nützliche Umformungen}
+\begin{itemize}
+\item $|z|^2 = z \,  \overline{z} = x^2+y^2 \geq 0$
+\item $|\overline{z}| = |z|$
+\item $\overline{z+w} = \overline{z} + \overline{w}$ und $\overline{zw} = \overline{z} \overline{w}$
+\item $|z+w| \leq |z| + |w|$ aber $|z w| = |z| |w|$
+\item $\frac{1}{z} = \frac{\overline{z}}{|z|^2}$
+\item $Re(z) = \frac{1}{2}(z+\overline{z})$ und $Im(z) = \frac{1}{2i}(z-\overline{z})$
+\item $z + \overline{z} = 2 Re(z)$ und $zw + \overline{zw} = 2 Re(zw)$
+\item $|z+w|^2 = (z+w) (\overline{z} + \overline{w}) \rightarrow $ (Quadrieren um den Betrag wegzubekommen)
+\item $|w+z|^2 = |w|^2+|z|^2+2 Re(w\overline{z})$ und $|wz|^2 = |w|^2 |z|^2$
+\item $max \{ |Re(z)|,|Im(z)| \} \leq |z| \leq |Re(z)| + |Im(z)|$
+\end{itemize}
+\end{document}

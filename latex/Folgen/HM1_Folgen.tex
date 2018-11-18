@@ -1,0 +1,70 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 5}
+\fancyhead[R]{22.11.2018}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+\section{Konvergenz von Folgen}
+\subsection{Definition der Konvergenz}
+\begin{center}
+\framebox[200pt]{$\forall \epsilon > 0, \exists n_{0} \in \mathbb{N}, \forall n \geq n_{0} : |a_{n}-a| < \epsilon$}
+\end{center}
+\subsection{Folgerungen}
+\begin{itemize}
+\item $a_n$ ist konvergent, wenn $\lim\limits_{n \rightarrow \infty}{a_n} = a$ existiert (a ist Grenzwert)
+\item Die Folge ist eine Nullfolge, wenn $a = 0$
+\item Konvergente Folgen sind immer beschränkt $(|a_n| \leq c) \rightarrow limsup/liminf$
+\item Konvergente Folgen haben nur einen Häufungswert (jede Teilfolge konvergiert gegen a)
+\item konvergent, wenn monoton (wachsend/fallend) und beschränkt
+\item \textbf{Satz von Bolanzo-Weierstraß:} Jede beschränkte Folge hat eine konvergente Teilfolge und damit mindestens einen Häufungswert
+\item Folge hat zwei unterschiedliche Häufungswerte $\Rightarrow$ Divergenz
+\item $a_n (konvergent) + b_n (divergent) \Rightarrow a_n + b_n (divergent)$
+\end{itemize}
+\subsection{Rechnen}
+Egal was für ein Verfahren man für den Nachweis der Konvergenz nutzt, ist es wichtig, dass man alle n in der Folge \textbf{gleichzeitig} gegen unendlich gehen lässt.
+\begin{itemize}
+\item \textbf{Grenzwertsätze} zur Vereinfachung nutzen \\
+($a_n+b_n \rightarrow a+b; \ \ a_n*b_n \rightarrow a*b; \ \ \frac{a_n}{b_n} \rightarrow \frac{a}{b}$ für $b_n \neq 0 \ \ und \ \ b \neq 0$)
+\item $a_n \rightarrow \inf$ und $\frac{1}{a_n} \rightarrow 0$
+\item $a_n + b_n \rightarrow a+b$ und $a_n * b_n \rightarrow a*b$
+\item $\lim\limits_{n \rightarrow \infty}{\frac{1}{n}=0}$
+\item $\sqrt[n]{n}\rightarrow 1$ aber $\sqrt[n]{n!}\rightarrow \inf$
+\item $(1+\frac{1}{n})^n\rightarrow e$
+\item $z^n$ konvergiert für $|z| < 1$ gegen 0 
+\end{itemize}
+\newpage
+\subsection{Trickkiste}
+\begin{itemize}
+\item \textbf{Summe 0 Ergänzung:} z.B. +1-1 (um bestimmte Form zu erzwingen)
+\item \textbf{Teilfolgenkriterium:} Wenn jede Teilfolge gegen a konvergiert, konvergiert auch die gesamte Folge gegen a. (a ist einziger Häufungspunkt)
+\item "Monoton und beschränkt gibt konvergent."
+\item \textbf{Sandwichkriterium:} $a_n \rightarrow a, c_n \rightarrow a$ und $a_n \leq b_n \leq c_n$ gilt auch $b_n \rightarrow a$
+\item \textbf{Kürzungstrick:} bei Quotient mit höchstem Exponenten von n teilen
+\item \textbf{3. Binomische Formel:} $(a-b)*(a+b) = a^2-b^2$ (bei Termen mit Wurzel)
+\item $a_n$ mit $e^{ln(a_n)}$ erweitern $\rightarrow$ Logarithmusgesetze anwenden
+\item wenn n als Exponent in Nenner und Zähler (z.B. $\frac{n^n}{(n+1)^n} \Rightarrow (\frac{n}{n+1})^n = (\frac{1}{1+\frac{1}{n}})^n$)
+\item Bruch umdrehen: $\frac{x}{y} = \frac{1}{\frac{y}{x}}$
+\end{itemize}
+\section{Wichtige Abschätzungen und Gleichungen}
+\begin{enumerate}
+\item \textbf{Bernoullische Ungleichung:} $(1+x)^n \geq 1+n*x$
+\item \textbf{geometrische Summenformel:} $u^m-v^m = (u-v)*\sum_{k=0}^{m-1}u^{m-1-k}  v^k$
+\item \textbf{Binominalsatz:} $(a+b)^n=\sum_{k=0}^{n} {n \choose k} a^kb^{n-k}$
+\item \textbf{Binominal Koeffizienten:} ${n \choose k} = \frac{n!}{k!(n-k)!}$
+\end{enumerate}
+\end{document}

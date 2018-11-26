@@ -1,0 +1,87 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 6}
+\fancyhead[R]{29.11.2018}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+
+\section{Konvergenz von Reihen}
+Bei der Konvergenz von Reihen kann man oft nicht so intuitiv vorgehen, wie bei Folgen, da man nicht nur den Verlauf einer Folge betrachtet, sondern jedes dieser Folgenelemente aufaddiert. So kann auch eine Reihe mit einer Nullfolge divergieren.
+\subsection{Definition}
+\begin{center}
+\framebox[250pt]{$\forall \epsilon > 0, \ \ \exists n_{0} \in \mathbb{N}, \ \ \forall m \geq n_{0} \ \ : \ \ |\Sigma_{n=0}^m a_{n}-S| < \epsilon$}
+\end{center}
+\subsection{Rechnen}
+\begin{itemize}
+\item \textbf{absolut konvergent}, wenn Reihe des Betrags konvergiert
+\item $\Sigma_{n=1}^{\infty} a_n$ konvergent $\Rightarrow \ \ a_n $ \textbf{Nullfolge}
+\item Reihen lassen sich summieren, zusammenziehen \\
+$\Sigma_{n=1}^{\infty} a_n = A , \ \ \Sigma_{n=1}^{\infty} b_n = B \ \ \Rightarrow \ \ \Sigma_{n=1}^{\infty} (\alpha a_n + \beta b_n) = \alpha A + \beta B$
+\item untere Grenze der Summe ist bei Reihen in Bezug auf Konvergenz egal / kann verändert werden um Umformung/Vereinfachung durchzuführen\\
+(z.B. kann man $\Sigma_{n=5}^{\infty}$ anstatt $\Sigma_{n=0}^{\infty}$ auf Konvergenz untersuchen)
+\end{itemize}
+\subsection{Wichtige Bezugsreihen}
+\begin{itemize}
+\item \textbf{harmonische Reihe:} $ \ \ \Sigma_{n=1}^{\infty}\frac{1}{n}$ divergiert\\
+$\Sigma_{n=1}^{\infty}\frac{1}{n^\alpha}$ konvergiert für $\alpha > 1$
+\item \textbf{geometrische Reihe: } $ \ \ \Sigma_{n=0}^{\infty}q^n = \frac{1}{1-q}$ für $|q| < 1$ \\
+$\Sigma_{n=0}^{m} q^n = \frac{1-q^{m+1}}{1-q}$
+\item $\Sigma_{n=1}^{\infty} \frac{1}{n(n+1)} = 1$
+\item \textbf{Exponentialfunktion:} $ \ \ \Sigma_{n=0}^{\infty} \frac{z^n}{n!} = e^z$
+\end{itemize}
+\subsection{Trickkiste}
+\begin{itemize}
+\item $|\Sigma_{n=1}^{\infty}a_n| \ \ \leq \ \ \Sigma_{n=1}^{\infty} |a_n|$ \ \ Folgerung aus der \textbf{Dreiecksungleichung}
+\item \textbf{Partialbruchzerlegung} (Summe ist leichter zu untersuchen als ein Produkt)
+\item \textbf{Teleskopsummentrick} (z.B. $\Sigma_{n=1}^{\infty}n = 1+2+...+n$)
+\item Abschätzung $\sqrt[n]{n} \ \leq 2$ da $n \leq n+1 \leq (1+1)^n \leq 2^n$ \ \ (\textbf{Bernoullische Ungleichung})
+\item selbe Exponenten zusammenfassen / ausklammmern
+\end{itemize}
+\newpage
+\subsection{Konvergenzkriterien}
+Um die die Konvergenz der Reihe $\Sigma_{n=1}^{\infty}a_n$ zu zeigen, kann man sich folgenden Kriterien bedienen:
+\begin{itemize}
+\item \textbf{Leibnizkriterium:} [Konvergenz; gut bei alternierenden Reihen $(-1)^n$]
+\begin{center}
+\framebox[100pt]{$\Sigma_{n=1}^{\infty}(-1)^n a_n$}
+\end{center}
+Konvergenz, wenn $a_n \rightarrow 0$ und $a_n \geq 0$ und $a_n$ monoton fallend
+\item \textbf{Majorantenkriterium:} [absolute Konvergenz]
+\begin{center}
+\framebox[180pt]{$|a_n| \leq b_n$ und $ \Sigma_{n=1}^{\infty} b_n$ konvergent}
+\end{center}
+\item \textbf{Minorantenkriterium:} [Divergenz]
+\begin{center}
+\framebox[180pt]{$a_n \geq b_n \geq 0$ und $\Sigma_{n=1}^{\infty} b_n$ divergent}
+\end{center}
+\item \textbf{Quotientenkriterium:} [absolute Konvergenz oder Divergenz; gut bei Fakultät]
+\begin{center}
+\framebox[100pt]{$\lim\limits_{n \rightarrow \infty}{b_n} = \frac{|a_{n+1}|}{|a_n|}$}\\
+\end{center}
+$b_n < 1 \rightarrow$ absolute Konvergenz;\ \ $b_n > 1 \rightarrow$ \ \ Divergenz; $b_n = 1 \rightarrow$ \ \ keine Aussage
+\item \textbf{Wurzelkriterium:} [absolute Konvergenz oder Divergenz]
+\begin{center}
+\framebox[100pt]{$\lim\limits_{n \rightarrow \infty}{b_n} = \sqrt[n]{|a_n|}$}\\
+\end{center}
+$b_n < 1 \rightarrow$ absolute Konvergenz;\ \ $b_n > 1 \rightarrow$ \ \ Divergenz; $b_n = 1 \rightarrow$ \ \ keine Aussage
+\item \textbf{Nullfolgenkriterium:} [Divergenz]
+\begin{center}
+\framebox[200pt]{$a_n$ keine Nullfolge $\Rightarrow $ Reihe divergiert}
+\end{center}
+\end{itemize}
+\end{document}

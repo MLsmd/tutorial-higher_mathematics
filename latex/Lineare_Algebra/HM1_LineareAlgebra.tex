@@ -1,0 +1,116 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb} %mathbb{}\usepackage{amssymb} %mathbb{}
+\usepackage{fancyhdr} %\framebox[150pt]{}
+\usepackage{amsmath,tikz} 
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 7}
+\fancyhead[R]{06.12.2018}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+\section{Lineare Algebra}
+\subsection{Linearkombination}
+Die Linearkombination ist ein Vektor, der sich durch \textbf{Vektoraddition} und \textbf{skalare Multiplikation} durch andere Vektoren darstellen lässt.
+\begin{center}
+$lin \{ V_j \} \ \ = \ \ \Sigma_{j=1}^n \alpha_j V_j$
+\end{center}
+\subsection{Basis}
+Die Basis eines Vektorraums U ist die Menge an Vektoren $V_1,V_2,...,V_n$, wenn diese linear unabhängig sind und $lin\{V_1,V_2,...V_n\} \ = \ U$ gilt.\\
+Bei einem n-dimensionalen Vektorraum enthält die Basis also n Elemente.\\
+Die \textbf{Standartbasis} enthält nur Vektoren, die nur Nullen und eine Eins enthalten. (z.B. $\{(0,1),(1,0)\}$)
+
+\subsection{Zeilenstufenform}
+
+\begin{center}
+  $
+\left(
+   \begin{array}{ccccc}
+3 & 1 & 0 & 2 & 3\\
+0 & 0 & 5 & 0 & 4\\
+0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0
+   \end{array}
+\right)
+$
+  \end{center}  
+\subsection{Zeilennormalform}
+\begin{center}
+  $
+\left(
+   \begin{array}{ccccc}
+1 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0\\
+0 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0
+   \end{array}
+\right)
+$
+  \end{center}  
+\textbf{Algorithmus für Zeilennormalform:}
+\begin{enumerate}
+\item in ZSF bringen
+\item teilen, sodass 1er entstehen
+\item met unteren Zeilen die 0er über den 1en erzeugen
+\end{enumerate}
+\subsection{Kern einer Matrix}
+\begin{center}
+\framebox[180pt]{$Kern A := \{ \vec{x} \in \mathbb{K}^m \ : \ A \vec{x} = \vec{0} \} \subseteq \mathbb{K}^m$}
+\end{center}
+\begin{itemize}
+\item Kern(A) ist Unterraum von $\mathbb{K}^m$
+\item Lösung + Element des Kerns ist auch Lösung ($\rightarrow$ Def. Unterraum)
+\end{itemize}
+\textbf{Kern bestimmen:}
+\begin{enumerate}
+\item $A\vec{x}=0$ lösen (Gauß / Zeilennormalform)
+\item \textbf{(-1) - Trick} anwenden (siehe 1.2)
+\end{enumerate}
+\subsection{(-1) - Trick}
+Der \textbf{(-1) - Trick} ist eine \textbf{Karlsruher Spezialität}.\\
+Vorgehen:
+\begin{enumerate}
+\item Matrix in \textbf{Zeilennormalform} bringen
+\item fehlende Zeilen (bei Sprung in ZNF) einfügen mit (-1) an entsprechender Stelle (sonst Nullen)
+\item Kern ist linearer Aufspann der \textbf{Spalten} in denen die ergänzte(n) (-1) Stehen
+\end{enumerate}
+\subsection{Bild einer Matrix}
+\begin{center}
+\framebox[180pt]{$Bild A := \{ A\vec{x} : \vec{x} \in \mathbb{K}^m \} \subseteq \mathbb{K}^n$}
+\end{center}
+\begin{itemize}
+\item entspricht der Lösungsmenge der Gleichung $A\vec{x} = \vec{b}$
+\item $A\vec{x} = \vec{b}$ hat Lösung $\Leftrightarrow b \in$ Bild(A)
+\item Bild(A) ist Unterraum von $K^n$ (genauer: linearer Aufspann der Spalten von A)
+\end{itemize}
+\subsection{Dimensionsformel}
+\begin{center}
+\framebox[250pt]{$dim(Kern(A)) + dim(Bild(A)) = m mit A\in \mathbb{K}^{n \ x \ m}$}
+\end{center}
+\subsection{Matrizenprodukt}
+\begin{itemize}
+\item $(\alpha A + \beta B)C = \alpha AC + \beta BC$
+\item $(AB)C = A(BC)$
+\item $AB \neq BA $
+\end{itemize}
+\newpage
+\subsection{Inverse Matrix}
+\begin{center}
+\framebox[160pt]{$B=A^{-1}$ wenn $AB = BA = I$}
+\end{center}
+Die Matrix ist invertierbar (regulaer)\\
+$\Leftrightarrow$ AB = I\\
+$\Leftrightarrow$ Kern(A) = {0}\\
+$\Leftrightarrow$ Rang(A) = dim(Bild(A)) = n
+\end{document}

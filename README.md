@@ -14,6 +14,7 @@ Use theses sheets as additional material but do not merely rely on it. I don't g
 * Sequences
 * Series 
 * Linear Algebra
+* Power Series
 
 ## License
 This project is licensed under the terms of the MIT license. (See [LICENSE.txt](https://github.com/MoritzLucaSchmid/tutoral-higher_mathematics/blob/master/LICENSE.txt))

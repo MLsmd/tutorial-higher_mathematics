@@ -1,0 +1,60 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 7}
+\fancyhead[R]{13.12.2018}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+
+\section{Potenzreihen}
+Mit Potenzreihen kann man reellwertige Funktionen beschreiben. Sie spielen eine sehr wichtige Rolle in der Numerik und auch in der Elektrotechnik (z.B. in Signale und Systeme).
+\begin{center}
+\framebox[100pt]{$\Sigma_{n=0}^{\infty} a_n (z-z_0)^n$}
+\end{center}
+\begin{itemize}
+\item \textbf{$a_n$:} Koeffizient
+\item \textbf{$z_0$:} Entwicklungspunkt
+\item \textbf{Konvergenzradius R:} für $|z-z_0| < R$ konvergiert die Reihe (Kreis mit Radius R um Entwicklungspunkt $z_0$); der Fall $|z-z_0| = R$ muss extra untersucht werden
+\item \textbf{Berechung des Konvergenzradius: }\\
+\begin{center}
+\framebox[200pt]{$R:= \frac{1}{limsup \sqrt[n]{|a_n|}} \ \ =  \ \ lim |\frac{a_n}{a_{n+1}}|$}
+\end{center}
+\end{itemize}
+
+\subsection{Wichtige Potenzreihen}
+\begin{itemize}
+\item \textbf{Exponentialfunktion: } $e^x = \Sigma_{n=0}^{\infty}\frac{x^n}{n!}$
+\item \textbf{Sinus: } $Sin(x) = \Sigma_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}$
+\item \textbf{Cosinus: } $Cos(x) = \Sigma_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}$
+\item \textbf{Logarithmus: } $ln(1+x) = \Sigma_{n=1}^{\infty}(-1)^{n+1}\frac{x^n}{n}$
+\item \textbf{geometrische Reihe: } $\frac{1}{1-x} = \Sigma_{n=0}^{\infty} x^n$ \ \ \ (für $|x| \leq 1$)
+\item \textbf{Ableitung geom. Reihe: } $\frac{1}{(1-x)^2} = \Sigma_{n=0}^{\infty} (n+1) x^n$  \ \ \ (für $|x| \leq 1$)
+\end{itemize}
+
+\subsection{Rechnen}
+\begin{itemize}
+\item \textbf{Cauchy-Produkt:} $(\Sigma \ \ a_n (z)^n) (\Sigma \ \ b_n (z)^n) \ \ = \ \ \Sigma_{k=0}^{n} \ \ a_k \ \ b_{n-k} $
+\end{itemize}
+\subsection{Tricks}
+\begin{itemize}
+\item Ableitung einer Potenzreihe hat den gleichen Konvergenzradius R
+\item Teile, die unabhängig von n sind, können aus der Summe herausgezogen werden
+\item Substitution (z.B. bei $x^n x^n$ substituiere $|x| = \sqrt{y} $)
+\item Reihe in bekannte Reihe (oft die geom. Reihe, R = 1) umformen
+\item Partialbruchzerlegung
+\end{itemize}
+\end{document}

@@ -1,0 +1,49 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 12}
+\fancyhead[R]{24.01.2019}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+
+\section{Grenzwert}
+\subsection{Definition}
+\begin{center}
+\framebox[100pt]{$lim_{x \rightarrow x_0} \ \ f(x) = y$}
+\end{center}
+,wenn $\forall \epsilon > 0 \ \ \ \ \exists \delta > 0$, so dass
+\begin{center}
+\framebox[200pt]{$0 < |x-x_0| < \delta \ \ \Rightarrow |f(x) - y| < \epsilon$}
+\end{center}
+Diese Definition sagt, dass wenn man sich einem bestimmten $x_0$ annähert (also der Abstand $|x-x_0|$ sehr klein wird), sich auch der y Wert dem Funktionswert an dieser Stelle annähert.\\
+Wenn dies nicht der Fall ist, \textbf{existiert der Limes nicht}. Dies ist zum Beispiel bei Sprungstellen der Fall.
+\subsection{Trickkiste}
+\begin{itemize}
+\item \textbf{l'Hopital:} Nenner und Zähler eines Bruches konvergieren \textbf{beide} gegen Null oder $\infty / -\infty$ $\rightarrow$ Grenzwert von der Ableitung des Bruches bilden
+\item x aus Nenner/Zähler herausziehen
+\item \textbf{Kürzungstrick}
+\item \textbf{Sandwichkriterium}
+\item Reihendarstellung verwenden $\rightarrow$ Teleskopsummenarstellung, dann kürzen
+\item \textbf{Polynomdivision }um auf gleichen Nennen zu bringen / zu kürzen
+\item \textbf{Binominalsatz}
+\item bei \textbf{3. Wurzel}: $a-b = \frac{a^3-b^3}{a^2+ab+b^2}$ (bei Quadratwurzel 3. Binomische Formel)
+\item 2 \textbf{Teilfolgen} mit unterschiedlichem Grenzwert $\rightarrow$ $f(x)$ hat keinen Grenzwert
+\item bei Nenner $\rightarrow 0$ (z.B. $lim_{x\rightarrow3} \frac{1}{x-3}$) \textbf{einseitigen Grenzwert} betrachten.
+\item Produkt \textbf{in Bruch "zwingen"}; dann z.B. l'Hopital (z.B. $x*ln(x) = \frac{ln(x)}{\frac{1}{x}}$)
+\end{itemize}
+
+\end{document}

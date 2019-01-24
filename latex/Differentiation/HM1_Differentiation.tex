@@ -1,0 +1,63 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb} %mathbb{}
+\usepackage{fancyhdr} %\framebox[150pt]{}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 12}
+\fancyhead[R]{24.01.2019}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+\section{Differentiation}
+\subsection{Definition}
+Nach der Defintion rechnet man nur, wenn die Ableitung für diese Stelle nicht gegeben bzw. definiert ist.
+\begin{center}
+\framebox[300pt]{$f'(x_0) = lim_{x\rightarrow x_0} \frac{f(x)-f(x_0)}{x-x_0} = lim_{h \rightarrow 0} \frac{f(x+h)-f(x)}{h} $}
+\end{center}
+\begin{itemize}
+\item wenn f d'bar im Intervall I $\Rightarrow$ f stetig in I
+\item für $n \in \mathbb{N}, f \in C^n \ \ \Rightarrow \ $ f n-mal d'bar auf I und $f^{(n)} : I \rightarrow R$ stetig
+\end{itemize}
+
+\subsection{Ableitungsregeln}
+\begin{itemize}
+\item \textbf{Produktregel:} $(f*g)'(x_0) \ = \ f'(x_0)g(x_0) + f(x_0)g'(x_0)$
+\item \textbf{Kettenregel:} $f(g(x_0))' \ = \ f'(g(x_0)) g'(x_0)$
+\item \textbf{Quotientenregel:} $(\frac{f(x)}{g(x)})' \ = \ \frac{f'(x)g(x) - f(x)g'(x)}{(g(x))^2}$
+\end{itemize}
+
+\subsection{Wichtige Ableitungen}
+\begin{itemize}
+\item $(e^x)' = e^x$
+\item $(Sin x)' = Cos x$ und $(cos x )' = -Sin x$
+\item $(tan x)' = 1+tan^2 x$
+\item $(ln(x))' = \frac{1}{x}$
+\item $(arctan x)' = \frac{1}{1+x^2}$
+\end{itemize}
+
+\subsection{Mittelwertsatz}
+Sei $f:[a,b]\rightarrow \mathbb{R}$ stetig und auf (a,b) differenzierbar.\\
+Dann $\exists \xi \in (a,b)$ mit $f'(\xi)\ = \ \frac{f(b)-f(a)}{b-a}$
+
+\section{Monotonie}
+\begin{center}
+\framebox[320pt]{f monoton wachsend für $x_1 < x_2 \ \Rightarrow \ f(x_1) \leq f(x_2) \ \ \forall x_1,x_2 \in D$ }
+\framebox[320pt]{oder $f'(x_0) \geq 0 \ \ \forall x \in (x_1,x_2)$}
+\end{center}
+Bei strenger Monotonie ($f'(x) > 0$) gilt:\\
+\\
+\textbf{(1)} \ f injektiv und $f^{-1}$ auch stetig\\
+\textbf{(2)} \ $f^{-1}$ stetig wenn f zusätzlich stetig
+
+\end{document}

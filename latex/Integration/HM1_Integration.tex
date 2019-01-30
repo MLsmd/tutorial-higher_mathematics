@@ -1,0 +1,60 @@
+
+
+\documentclass[a4paper,12pt]{article} % The default font size is 12pt on A4 paper, change to 'usletter' for US Letter paper and adjust margins in structure.tex
+\usepackage{amssymb} %mathbb{}
+\usepackage{fancyhdr} %\framebox[150pt]{}
+\fancyhf{}
+\fancyhead[L]{HM1 Tutorium 13}
+\fancyhead[R]{31.01.2019}
+\fancyfoot[L]{Moritz Luca Schmid}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{plain}{}
+\pagestyle{fancy}
+\setlength{\headheight}{25pt}
+\addtolength{\headwidth} {23mm}
+
+\input{../structure.tex} % Input the structure.tex file which specifies the document layout and style
+
+
+\begin{document}
+\section{Integration}
+Das Integral ist die "Summe einer kontiniuierlichen Funktion". Im eindimensionalen Fall entspricht das Integral über die Funktion f(x) der Fläche unter dem Graphen von f.
+
+\subsection{Partielle Integration}
+\begin{center}
+\framebox[150pt]{$\int f' g \ dx \ = \ f g \ - \ \int f g'$}
+\end{center}
+Die partielle Integration ist dann sinnvoll, \textbf{wenn ein störendes Element durch ableiten verschwindet} (z.B. x' = 1).
+\begin{itemize}
+\item \textbf{"Faktor 1 Trick":} Wenn eigentliche Funktion nicht aufleitbar\\
+$\rightarrow$ Funktion mit 1 multiplizieren (f'=1 und g= Funktion), somit \textbf{muss die Funktion nur abgeleitet}, aber nicht aufgeleitet werden.\\
+(z.B. $ln(x) = 1*ln(x) \Rightarrow \int 1*ln(x) dx \ = \ x*ln(x) \ - \ \int x*\frac{1}{x} \ = ...$)
+\item \textbf{"Faktor 2 Trick":} Wenn im neuen Integral der part. Integration das selbe wie im eigentlichen Integral steht (vor allem bei sin/cos/exp):\\
+z.B. $\int sin \ cos \ dx \ = \ -cos^2 + c \ - \ \int sin \ cos dx \  \ \ \ \ |auf beiden Seiten +\int sin \ cos \ dx$ und $*\frac{1}{2}$\\
+$= \frac{1}{2} cos^2 + \frac{c}{2}$
+\end{itemize}
+
+\subsection{Substitution}
+\begin{center}
+\framebox[290pt]{(i) $\int f(u(x)) \ u'(x) \ dx \ = \ F(u(x)) + c \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $ } \\
+\framebox[290pt]{(ii)$I=[a,b] \Rightarrow \int_{a}^b f(u(x)) \ u'(x) \ dx \ = \ F(u(b)) - F(u(a))$ }
+\end{center}
+Bei unschöner Verkettung einfach die Verkettung substituieren. Oftmals geben auch die Integralgrenzen Aufschluss darüber, welche Substitution geschickt ist.\\
+\textbf{Wichtig:} Bei unbestimmtem Integral rücksubstituieren; sonst Grenzen anpassen. \textbf{Nicht vergessen!!}
+
+\subsection{Uneigentliches Integral}
+Eine Grenze des Integrals ist $\infty$ bzw. lässt den Nenner eines Quotienten 0 setzen. (z.B. $\int_{0}^{\infty} x^2 \ dx$
+Die "kritische" Integralgrenze wird mit einer Variablen a ersetzt. Nach der Berechnung des Integrals berechnet man den Grenzwert (limes) des Terms.
+\begin{itemize}
+\item \textbf{konvergent}, wenn $lim_{a \rightarrow \xi}$ existiert
+\end{itemize}
+\subsection{Tricks zur Analyse von uneigentlichen Integralen}
+\begin{itemize}
+\item \textbf{Partialbruchzerlegung }($\frac{1}{x*(x+4)} \ = \ \frac{A}{x} + \frac{B}{x+4}$)
+\item \textbf{Majorantenkriterium für Konvergenz (bzw. Minorante für Divergenz)}
+\item Integral aufteilen, wenn beide Grenzen kritisch ($\int_{-\infty}^\infty x \ dx  \ = \ \int_{-\infty}^c \ dx + \int_{c}^\infty x \ dx$)
+\end{itemize}
+
+\end{document}
